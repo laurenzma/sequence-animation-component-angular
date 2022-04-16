@@ -1,0 +1,72 @@
+.sequenceAnimationMainContainer {
+  overflow: hidden;
+}
+
+.sequenceAnimationContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  //padding: 6%;
+  overflow: hidden;
+  //  margin: 2%;
+}
+
+.sequenceAnimationCanvas {
+  position: relative;
+  height: auto;
+  max-width: 60%;
+  transition: opacity 0.4s ease-in-out;
+}
+
+
+#title-text-wrapper {
+  text-align: center;
+  max-width: 80%;
+  margin: auto;
+  margin: 4% 0%;
+}
+
+#floating-text-wrapper {
+  position: absolute;
+  top: 8%;
+  z-index: 2;
+  text-align: center;
+}
+
+#clickableIconButton {
+  opacity: 0.9;
+  bottom: 10%;
+  height: 5%;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: opacity 0.4s ease-in-out;
+}
+
+#clickableIconButton:hover {
+  opacity: 1;
+}
+
+.usePadding {
+  padding: 4% 0%;
+}
+
+// für mobile Webpage
+@media screen and (max-width: 750px),
+  (min-width: 750px) and (max-width: 1024px) {
+  .usePadding {
+    padding: 20% 0%;
+  }
+
+  .sequenceAnimationCanvas {
+    height: auto;
+    max-width: 100%;
+  }
+}

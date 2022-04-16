@@ -1,0 +1,44 @@
+<div
+  id="sequenceAnimationMainContainer_{{ mainId }}"
+  class="sequenceAnimationMainContainer"
+  #sequenceAnimationMainContainer
+>
+  <div
+    id="sequenceAnimationContainer_{{ mainId }}"
+    class="sequenceAnimationContainer"
+    #sequenceAnimationContainer
+    enter-viewport
+    (visibilityChange)="_visibilityChangeHandler($event)"
+    threshold="200"
+    [ngClass]="{ usePadding: titleText != null }"
+  >
+    <div
+      *ngIf="titleText != null"
+      id="title-text-wrapper"
+      class="bigheader"
+      [innerHTML]="titleText"
+      [style.color]="textColor"
+    ></div>
+
+    <canvas
+      [width]="canvasWidth"
+      [height]="canvasHeight"
+      #animationCanvas
+      id="sequenceAnimationCanvas_{{ mainId }}"
+      class="sequenceAnimationCanvas"
+    >
+    </canvas>
+
+    <!-- <div id="introWrapper"> -->
+    <!-- <div class="headline" id="introTextSequenceScroll" [innerHTML]="introText"></div> -->
+    <!-- </div> -->
+
+    <img
+      *ngIf="buttonCubicImage != null"
+      id="clickableIconButton"
+      role="button"
+      [routerLink]="buttonRoute"
+      src="{{ 'assets/graphics/' + buttonCubicImage }}"
+    />
+  </div>
+</div>
